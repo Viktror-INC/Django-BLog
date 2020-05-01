@@ -1,0 +1,64 @@
+ {% extends 'blog1/nav.html' %}
+
+  {% load static %}
+
+  {% block content %}
+
+ <!-- Page content -->
+
+	
+ <!-- Create post -->
+	<form action="upload_done/" method="post" enctype="multipart/form-data">
+
+{% csrf_token %}
+  <div class="form-group">
+    <center><h5>Post title</h5></center>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter post title" name="title">
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <center><h5>Post text</h5></center>
+  <label for="exampleFormControlTextarea2">Small textarea</label>
+  <textarea name="post" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Enter post text"></textarea>
+</div>
+
+ <br>
+  <center><h5>Upload image</h5></center>
+
+<div class="custom-file">
+    <input type="file" class="custom-file-input" id="validatedCustomFile" name="image" required>
+    <label class="custom-file-label" for="validatedCustomFile">Upload image for post...</label>
+    <div class="invalid-feedback">Example invalid custom file feedback</div>
+  </div>
+  <br>
+  <br>
+
+   <div class="form-group">
+    <center><h5>Post Auther name</h5></center>
+    <input type="text" class="form-control" id="authername" placeholder="Enter Author post" name="auther">
+  </div>
+
+<br>
+
+
+
+
+   <div class="form-group">
+    <center><h5>Youtube video link</h5></center>
+    <input type="text" class="form-control" id="youtubelink" placeholder="Enter Youtube link" name="youtubelink">
+  </div>
+
+<br>
+
+  <br>
+  <br>
+
+	<center><button type="submit" class="btn btn-success btn-lg">Create Post</button></center>
+
+	<br>
+
+</form>
+<!-- Create post end -->
+{% endblock %}
